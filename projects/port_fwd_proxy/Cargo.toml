@@ -1,5 +1,5 @@
 [package]
-name = "leetcode"
+name = "port_fwd_proxy"
 version = "0.1.0"
 edition = "2024"
 

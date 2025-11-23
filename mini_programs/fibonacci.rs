@@ -1,11 +1,28 @@
 use std::io;
 
-fn get_sum(n: u32) -> u32 {
+// fn get_sum(n: u32) -> u32 {
+//     if n == 0 || n == 1 {
+//         return n;
+//     }
+
+//     return get_sum(n - 1) + get_sum(n - 2);
+// }
+
+fn get_fibonacci_sum(n: u32) -> u32 {
     if n == 0 || n == 1 {
         return n;
     }
 
-    return get_sum(n - 1) + get_sum(n - 2);
+    let mut prev = 0;
+    let mut curr = 1;
+
+    for _ in 2..n {
+        let next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+
+    return curr;
 }
 
 fn main() {
@@ -23,6 +40,6 @@ fn main() {
         }
     };
 
-    let value: u32 = get_sum(input);
+    let value: u32 = get_fibonacci_sum(input);
     println!("Value at given index is {}", value);
 }

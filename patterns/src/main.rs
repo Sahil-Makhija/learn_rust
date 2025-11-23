@@ -175,6 +175,30 @@ fn pattern_16(n: u8) {
     }
 }
 
+fn pattern_17(n: u8) {
+    for i in 0..n {
+        for _j in 0..(n - 1 - i) {
+            print!(" ");
+        }
+        for j in 0..(i + 1) {
+            print!("{}", (b'A' + j) as char);
+        }
+        for j in 0..i {
+            print!("{}", (b'A' + i - j - 1) as char);
+        }
+        print!("\n");
+    }
+}
+
+fn pattern_18(n: u8) {
+    for i in 0..n {
+        for j in 0..(i + 1) {
+            print!("{}", (b'A' - 1 + n - i + j) as char);
+        }
+        print!("\n");
+    }
+}
+
 fn main() {
     // println!("Hello, world!");
     // print_square(8);
@@ -191,6 +215,8 @@ fn main() {
     // pattern_12(5);
     // pattern_13(5);
     // pattern_14(5);
-    pattern_15(5);
+    // pattern_15(5);
     // pattern_16(5);
+    // pattern_17(5);
+    pattern_18(5);
 }
