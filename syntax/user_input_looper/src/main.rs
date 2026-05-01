@@ -20,7 +20,23 @@ impl Command {
     }
 
     fn add(&self) {
-        println!("Adding function here.");
+        let mut n1 = String::new();
+        io::stdin().read_line(&mut n1).expect("failed to read.");
+        let n1 :u32 = match n1.trim().parse() {
+            Ok(num)=>num,
+            Err(_)=>{
+                println!("failed to parse.");
+            }
+        }
+        let mut n2 = String::new();
+        io::stdin().read_line(&mut n2).expect("failed to read.");
+        let n2 :u32 = match n2.trim().parse() {
+            Ok(num)=>num,
+            Err(_)=>{
+                println!("failed to parse.");
+            }
+        }
+        n1 + n2
     }
 
     fn subtract(&self) {
