@@ -1,6 +1,6 @@
 use crate::utils::swap;
 
-// If a function doesn't need mutable access, don't give it
+// If a function doesn't need mutable access, don't give it. Use slices instead of vectors
 pub fn get_minimum_index(nums: &[usize], curr_idx: usize) -> usize {
     let mut min_idx = curr_idx;
     for i in (curr_idx + 1)..(nums.len()) {
